@@ -6,6 +6,7 @@ public class MyFirstScirpt : MonoBehaviour
     void Start()
     {
         print("hello world") ;
+        print("welcome to unity") ;
     }
 
     // Update is called once per frame
