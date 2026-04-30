@@ -1,11 +1,11 @@
-  using UnityEngine;
+using UnityEngine;
 
-public class MyFirstScirpt : MonoBehaviour
+public class newcomponent : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        print(transform.position);
+        
     }
 
     // Update is called once per frame
