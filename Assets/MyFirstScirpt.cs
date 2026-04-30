@@ -2,7 +2,10 @@
 
 public class MyFirstScirpt : MonoBehaviour
 {
-     Vector3 newPosition = new Vector3(1.0f,2.0f,3.0f);
+  public float speed = 5f;
+    public float limit = 5f;
+
+    Vector3 direction = Vector3.right; // move along X
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -13,6 +16,13 @@ public class MyFirstScirpt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(5f, 0f, 0f) * Time.deltaTime;
+       // Move continuously
+        transform.position += direction * speed * Time.deltaTime;
+
+        // Check if beyond limit
+        if (transform.position.x > limit || transform.position.x < -limit)
+        {
+            direction = -direction; // reverse direction
     }
+  }
 }
