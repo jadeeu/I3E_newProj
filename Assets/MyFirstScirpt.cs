@@ -2,9 +2,11 @@
 
 public class MyFirstScirpt : MonoBehaviour
 {
-      public float speed = 5f;
-    public float rotateSpeed = 100f;
-    public float limit = 5f;
+    public float speed = 100f;
+    public float maxAngle = 45f;
+
+    float currentRotation = 0f;
+    float direction = 1f;
 
     Vector3 direction = Vector3.right;
     void Start()
@@ -14,14 +16,14 @@ public class MyFirstScirpt : MonoBehaviour
     // Update is called once per frame
     void Update()
   {
-     // movement
-        transform.position += direction * speed * Time.deltaTime;
+    // rotate
+        float rotationThisFrame = speed * Time.deltaTime * direction;
+        transform.Rotate(0, rotationThisFrame, 0);
 
-        // rotation
-        transform.Rotate(0, rotateSpeed * Time.deltaTime, 0);
+        currentRotation += rotationThisFrame;
 
-        // reverse movement at limit
-        if (transform.position.x > limit || transform.position.x < -limit)
+        // reverse when limit reached
+        if (currentRotation > maxAngle || currentRotation < -maxAngle)
         {
             direction = -direction;
    }
