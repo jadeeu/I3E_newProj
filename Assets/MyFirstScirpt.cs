@@ -9,8 +9,7 @@ public class MyFirstScirpt : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        transform.position = newPosition;
-        print(transform.position);
+      
     }
 
     // Update is called once per frame
