@@ -13,6 +13,6 @@ public class MyFirstScirpt : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        transform.position += new Vector3(1f, 0f, 0f) * Time.deltaTime;
+        transform.position += new Vector3(5f, 0f, 0f) * Time.deltaTime;
     }
 }
