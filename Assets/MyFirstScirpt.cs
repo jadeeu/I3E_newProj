@@ -15,8 +15,8 @@ public class MyFirstScirpt : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-  {
-            // rotate
+    {
+        // rotate
         float rotationThisFrame = speed * Time.deltaTime * direction;
         transform.Rotate(0, rotationThisFrame, 0);
 
@@ -26,6 +26,6 @@ public class MyFirstScirpt : MonoBehaviour
         if (currentRotation > maxAngle || currentRotation < -maxAngle)
         {
             direction = -direction;
-   }
-  }
+        }
+    }
 }
