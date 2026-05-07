@@ -176,6 +176,23 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+--- !u!1 &300998109 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2095481971038168831, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+  m_PrefabInstance: {fileID: 6909869989368547666}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &300998115
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300998109}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a41f4c4d9e682bb468ca40b707afa9b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::collisions
 --- !u!1 &330585543
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,7 +990,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2095481971038168831, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 300998115}
   m_SourcePrefab: {fileID: 100100000, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

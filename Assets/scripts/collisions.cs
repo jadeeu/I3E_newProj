@@ -4,6 +4,6 @@ public class collisions : MonoBehaviour
 {
 void OnCollisionEnter(Collision collision)
 {
-    print("Collied detected");
+    print("Collied detected with" + collision.gameObject.name);
 }
 }
