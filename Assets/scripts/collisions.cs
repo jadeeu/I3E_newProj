@@ -13,7 +13,6 @@ void OnCollisionEnter(Collision collision)
 void OnCollisionExit(Collision collision)
 { 
     print("Collison ended with" + collision.gameObject.name);
-    Destroy(gameObject);
 }
 void OnCollisonStay(Collision collision)
     {
