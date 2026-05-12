@@ -3,20 +3,19 @@ using UnityEngine;
 public class collect : MonoBehaviour
 {
     public int collectedItems = 0;
-    public int totalCollectibles = 5
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int totalCollectibles = 5;
+
     void Start()
     {
         
     }
 
-    // Update is called once per frame
     void Update()
     {
         
     }
 
-        void OnCollisionEnter(Collision collision)
+    void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
