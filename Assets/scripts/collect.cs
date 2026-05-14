@@ -40,4 +40,9 @@ public class collect : MonoBehaviour
             }
         }
     }
+
+    void OnInteract()
+    {
+        print("Player wants to interact with something");
+    }
 }

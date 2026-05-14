@@ -133,7 +133,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7871011934114290698, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 14.672689
+      value: 16.96
       objectReference: {fileID: 0}
     - target: {fileID: 7871011934114290698, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -211,7 +211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.13
+      value: -12.15
       objectReference: {fileID: 0}
     - target: {fileID: 9005220659476430818, guid: 2d3a85ecde41a8246a79669975912b74, type: 3}
       propertyPath: m_LocalRotation.w
@@ -676,6 +676,20 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
   m_PrefabInstance: {fileID: 568785095}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &465721811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465721803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f0bdf75f6c28dd4abfb71ca29a0f171, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::collect
+  collectedItems: 0
+  totalCollectibles: 5
 --- !u!1001 &568785095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -698,7 +712,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -7.13
+      value: -12.15
       objectReference: {fileID: 0}
     - target: {fileID: 8997996947095583982, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       propertyPath: m_LocalRotation.w
@@ -738,6 +752,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
       addedObject: {fileID: 465721804}
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 465721811}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!1 &832575517
 GameObject:
@@ -913,9 +930,13 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cylinder (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 2095481971038168831, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+      propertyPath: m_TagString
+      value: Collectible
+      objectReference: {fileID: 0}
     - target: {fileID: 7871011934114290698, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 12.514059
+      value: 11.92
       objectReference: {fileID: 0}
     - target: {fileID: 7871011934114290698, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
       propertyPath: m_LocalPosition.y
@@ -1201,7 +1222,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7871011934114290698, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 13.07
+      value: 13.89
       objectReference: {fileID: 0}
     - target: {fileID: 7871011934114290698, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
       propertyPath: m_LocalPosition.y
