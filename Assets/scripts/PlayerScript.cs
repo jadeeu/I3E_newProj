@@ -19,7 +19,7 @@ public class PlayerScript : MonoBehaviour
         if (currentCollectable)
         {
             collCount++;
-            print("Player has collected " + collCount + " collectibles");
+            print("Player has collected " + collCount + " Collectibles");
             Destroy(currentCollectable);
         }
     }
