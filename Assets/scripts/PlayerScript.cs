@@ -6,7 +6,7 @@ public class PlayerScript : MonoBehaviour
 
     int collCount = 0;
 
-    void OnTriggerEnter(Collider collision)
+    void OnCollisionEnter(Collider collision)
     {
         if (collision.gameObject.CompareTag("Collectible"))
         {
