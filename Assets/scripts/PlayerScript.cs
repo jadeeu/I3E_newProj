@@ -6,9 +6,9 @@ public class PlayerScript : MonoBehaviour
 
     int collCount = 0;
 
-    void OnCollisionEnter(Collision collision)
+    void OnTriggerEnter(Collider collision)
     {
-        if(collision.gameObject.tag == "Collectible")
+        if (collision.gameObject.CompareTag("Collectible"))
         {
             currentCollectable = collision.gameObject;
         }
@@ -16,9 +16,11 @@ public class PlayerScript : MonoBehaviour
 
     void OnInteract()
     {
-        collCount++;
-        print("Player has collected" + collCount + "collectibles");
-        Destroy(currentCollectable);
+        if (currentCollectable)
+        {
+            collCount++;
+            print("Player has collected " + collCount + " collectibles");
+            Destroy(currentCollectable);
+        }
     }
-
 }
