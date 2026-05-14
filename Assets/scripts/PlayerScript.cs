@@ -2,34 +2,35 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     GameObject currentCollectable;
-
     int collCount = 0;
 
     void OnCollisionEnter(Collision collision)
     {
-        if(collision.gameObject.tag == "Collectible")
+        if (collision.gameObject.CompareTag("Collectible"))
         {
             currentCollectable = collision.gameObject;
         }
     }
 
+    void OnCollisionExit(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("Collectible"))
+        {
+            currentCollectable = null;
+        }
+    }
+
+    // This gets called by Starter Assets Input System
     void OnInteract()
     {
-        collCount++;
-        print("Player has collected" + collCount + "collectibles");
-        Destroy(currentCollectable);
+        if (currentCollectable != null)
+        {
+            collCount++;
+            print("Player has collected " + collCount + " collectibles");
+
+            Destroy(currentCollectable);
+            currentCollectable = null;
+        }
     }
 }
