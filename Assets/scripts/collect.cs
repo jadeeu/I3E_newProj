@@ -4,6 +4,7 @@ public class collect : MonoBehaviour
 {
     public int collectedItems = 0;
     public int totalCollectibles = 5;
+    [SerializeField] private int scoreValue = 10;
 
     void Start()
     {
@@ -45,4 +46,9 @@ public class collect : MonoBehaviour
     {
         print("Player wants to interact with something");
     }
+
+    public int GetScoreValue()
+{
+    return scoreValue;
+}
 }
