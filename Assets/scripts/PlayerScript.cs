@@ -2,21 +2,19 @@ using UnityEngine;
 
 public class PlayerScript : MonoBehaviour
 {
-    GameObject currentCollectable;
+    public float collectDistance = 5f;
 
     int totalScore = 0;
-
-    public float collectDistance = 5f;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            OnInteract();
+            TryCollect();
         }
     }
 
-    void OnInteract()
+    void TryCollect()
     {
         Ray ray = Camera.main.ScreenPointToRay(
             new Vector3(Screen.width / 2, Screen.height / 2)
@@ -26,22 +24,16 @@ public class PlayerScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, collectDistance))
         {
-            if (hit.collider.CompareTag("Collectible"))
+            Collectible collectible =
+                hit.collider.GetComponent<Collectible>();
+
+            if (collectible != null)
             {
-                currentCollectable = hit.collider.gameObject;
+                totalScore += collectible.score;
 
-                Collectible collectible =
-                    currentCollectable.GetComponent<Collectible>();
+                collectible.Collect();
 
-                if (collectible != null)
-                {
-                    totalScore += collectible.score;
-
-                    print("Collected! Total Score: " + totalScore);
-                }
-
-                Destroy(currentCollectable);
-                currentCollectable = null;
+                Debug.Log("Total Score: " + totalScore);
             }
         }
     }
