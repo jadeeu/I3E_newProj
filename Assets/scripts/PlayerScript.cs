@@ -24,14 +24,14 @@ public class PlayerScript : MonoBehaviour
 
         if (Physics.Raycast(ray, out hit, collectDistance))
         {
-            Collectible collectible =
-                hit.collider.GetComponent<Collectible>();
+            Collect collect =
+                hit.collider.GetComponent<Collect>();
 
-            if (collectible != null)
+            if (collect != null)
             {
-                totalScore += collectible.score;
+                totalScore += collect.score;
 
-                collectible.Collect();
+                collect.CollectItem();
 
                 Debug.Log("Total Score: " + totalScore);
             }
