@@ -689,6 +689,19 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
   collectDistance: 5
+--- !u!114 &465721818
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 465721803}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16459452a972a4438c6f6eed8b71283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  score: 10
 --- !u!1001 &568785095
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -754,6 +767,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
       insertIndex: -1
       addedObject: {fileID: 465721817}
+    - targetCorrespondingSourceObject: {fileID: 8616685848737228372, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 465721818}
   m_SourcePrefab: {fileID: 100100000, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
 --- !u!1 &788192653
 GameObject:
@@ -983,7 +999,7 @@ GameObject:
   - component: {fileID: 1028369414}
   - component: {fileID: 1028369413}
   - component: {fileID: 1028369412}
-  - component: {fileID: 1028369411}
+  - component: {fileID: 1028369416}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Collectible
@@ -991,19 +1007,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1028369411
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1028369410}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1f0bdf75f6c28dd4abfb71ca29a0f171, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::collect
-  score: 10
 --- !u!65 &1028369412
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -1097,6 +1100,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1028369416
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1028369410}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16459452a972a4438c6f6eed8b71283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  score: 10
 --- !u!1 &1398991933
 GameObject:
   m_ObjectHideFlags: 0
@@ -1277,8 +1293,29 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 2095481971038168831, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1577357930}
   m_SourcePrefab: {fileID: 100100000, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+--- !u!1 &1577357929 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2095481971038168831, guid: 80799b86808cf9447a3126aacb53366c, type: 3}
+  m_PrefabInstance: {fileID: 1577357928}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1577357930
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1577357929}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b16459452a972a4438c6f6eed8b71283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Collectible
+  score: 10
 --- !u!4 &1581472833 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5393215578589016641, guid: c5efc39a8aaf6e64ea40e9ad573e9b47, type: 3}
