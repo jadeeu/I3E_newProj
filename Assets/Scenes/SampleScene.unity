@@ -688,7 +688,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b0522505cfdac9b49908f1e80fbed645, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlayerScript
-  collectDistance: 5
+  interactDistance: 5
 --- !u!114 &465721818
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -783,6 +783,7 @@ GameObject:
   - component: {fileID: 788192657}
   - component: {fileID: 788192656}
   - component: {fileID: 788192655}
+  - component: {fileID: 788192658}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -883,6 +884,18 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 788192653}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!114 &788192658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 788192653}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1667c0d2754fba04b8f7c8f1fbfc4f74, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Door
 --- !u!1 &832575517
 GameObject:
   m_ObjectHideFlags: 0
