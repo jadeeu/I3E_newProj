@@ -3,7 +3,7 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     // This triggers automatically when something enters the collider
-    private void OnTriggerEnter(Collider other)
+    public void OnTriggerEnter(Collider other)
     {
         // Check if the object that touched us has the "Player" tag
         if (other.CompareTag("Player"))
@@ -12,7 +12,7 @@ public class Collectible : MonoBehaviour
         }
     }
 
-    private void CollectItem()
+    public void CollectItem()
     {
         // 1. Add your logic here (e.g., increase score, add to inventory)
         Debug.Log("Item Collected!");
