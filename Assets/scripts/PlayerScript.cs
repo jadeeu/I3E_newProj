@@ -23,18 +23,20 @@ public class PlayerScript : MonoBehaviour
         RaycastHit hit;
 
         if (Physics.Raycast(ray, out hit, collectDistance))
-        {
-            Collect collect =
-                hit.collider.GetComponent<Collect>();
+{
+    // Change 'Collect' to 'Collectible' here
+    Collectible collect = hit.collider.GetComponent<Collectible>();
 
-            if (collect != null)
-            {
-                totalScore += collect.score;
+    if (collect != null)
+    {
+        // If your Collectible script doesn't have a 'score' variable yet,
+        // comment this next line out by adding // in front of it
+        totalScore += collect.score; 
 
-                collect.CollectItem();
+        collect.CollectItem();
 
-                Debug.Log("Total Score: " + totalScore);
-            }
-        }
+        Debug.Log("Total Score: " + totalScore);
+    }
+}
     }
 }
