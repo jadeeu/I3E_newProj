@@ -1,15 +1,15 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
+using UnityEngine.InputSystem; // Using the new input system namespace
 
 public class PlayerScript : MonoBehaviour
 {
     public float collectDistance = 5f;
-
     int totalScore = 0;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        // CHANGED: This checks for the 'E' key using the New Input System
+        if (Keyboard.current != null && Keyboard.current.eKey.wasPressedThisFrame)
         {
             TryCollect();
         }
@@ -17,27 +17,24 @@ public class PlayerScript : MonoBehaviour
 
     void TryCollect()
     {
+        // Creates a ray pointing directly out from the center of the screen
         Ray ray = Camera.main.ScreenPointToRay(
-            new Vector3(Screen.width / 2, Screen.height / 2)
+            new Vector3(Screen.width / 2f, Screen.height / 2f, 0f)
         );
 
         RaycastHit hit;
 
+        // Casts the ray into the scene
         if (Physics.Raycast(ray, out hit, collectDistance))
-{
-    // Change 'Collect' to 'Collectible' here
-    Collectible collect = hit.collider.GetComponent<Collectible>();
+        {
+            Collectible collect = hit.collider.GetComponent<Collectible>();
 
-    if (collect != null)
-    {
-        // If your Collectible script doesn't have a 'score' variable yet,
-        // comment this next line out by adding // in front of it
-        totalScore += collect.score; 
-
-        collect.CollectItem();
-
-        Debug.Log("Total Score: " + totalScore);
-    }
-}
+            if (collect != null)
+            {
+                totalScore += collect.score; 
+                collect.CollectItem();
+                Debug.Log("Total Score: " + totalScore);
+            }
+        }
     }
 }
