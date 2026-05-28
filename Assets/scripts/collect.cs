@@ -4,7 +4,7 @@ public class Collect : MonoBehaviour
 {
     public int score = 10;
 
-    AudioSource collectAuto;
+    AudioSource collectibleAuto;
 
     public void CollectItem()
     {
@@ -14,6 +14,6 @@ public class Collect : MonoBehaviour
 
     void Start()
     {
-        collectAudio = Getcomponent<AudioSource>();
+        collectibleAudio = Getcomponent<AudioSource>();
     }
 }
