@@ -16,12 +16,7 @@ public class GiftBox : MonoBehaviour
 
             if (pressCount >= 3)
             {
-                Debug.Log("GiftBox Destroyed!");
-
-                // Spawn the Ball
                 Instantiate(ballPrefab, transform.position, Quaternion.identity);
-
-                // Destroy the GiftBox
                 Destroy(gameObject);
             }
         }
@@ -29,10 +24,12 @@ public class GiftBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
+        Debug.Log("Touched: " + other.name);
+
         if (other.CompareTag("Player"))
         {
             playerNear = true;
-            Debug.Log("Player is near the GiftBox.");
+            Debug.Log("Player Near!");
         }
     }
 
@@ -41,7 +38,7 @@ public class GiftBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = false;
-            Debug.Log("Player left the GiftBox.");
+            Debug.Log("Player Left!");
         }
     }
 }
