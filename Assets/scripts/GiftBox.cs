@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class GiftBox : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
-    }
+    public GameObject ballPrefab;
 
-    // Update is called once per frame
     void Update()
     {
-        
+        // Press G to destroy the GiftBox (for testing)
+        if (Input.GetKeyDown(KeyCode.G))
+        {
+            Instantiate(ballPrefab, transform.position, Quaternion.identity);
+            Destroy(gameObject);
+        }
     }
 }
