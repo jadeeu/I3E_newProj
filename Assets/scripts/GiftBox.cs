@@ -9,9 +9,21 @@ public class GiftBox : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (playerNear && Input.GetKeyDown(KeyCode.E))
         {
-            Debug.Log("E Pressed");
+            pressCount++;
+            Debug.Log("E Press Count: " + pressCount);
+
+            if (pressCount >= 3)
+            {
+                Debug.Log("GiftBox Destroyed!");
+
+                // Spawn the Ball
+                Instantiate(ballPrefab, transform.position, Quaternion.identity);
+
+                // Destroy the GiftBox
+                Destroy(gameObject);
+            }
         }
     }
 
@@ -20,6 +32,7 @@ public class GiftBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = true;
+            Debug.Log("Player is near the GiftBox.");
         }
     }
 
@@ -28,6 +41,7 @@ public class GiftBox : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             playerNear = false;
+            Debug.Log("Player left the GiftBox.");
         }
     }
 }
