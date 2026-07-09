@@ -8,33 +8,10 @@ public class GiftBox : MonoBehaviour
     private int pressCount = 0;
 
     void Update()
+{
+    if (Input.GetKeyDown(KeyCode.E))
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.E))
-        {
-            pressCount++;
-            Debug.Log("E Press Count: " + pressCount);
-
-            if (pressCount == 3)
-            {
-                Instantiate(ballPrefab, transform.position, Quaternion.identity);
-                Destroy(gameObject);
-            }
-        }
+        Debug.Log("E Pressed");
     }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerNear = true;
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerNear = false;
-        }
-    }
+}
 }
