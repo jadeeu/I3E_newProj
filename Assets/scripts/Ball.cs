@@ -3,8 +3,9 @@ using UnityEngine;
 public class Ball : MonoBehaviour
 {
     public float forceAmount = 500f;
+    public Transform player;
+    public float interactDistance = 3f;
 
-    private bool playerNear = false;
     private Rigidbody rb;
 
     void Start()
@@ -14,27 +15,14 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
-        if (playerNear && Input.GetKeyDown(KeyCode.E))
+        // Check if player is close enough
+        if (Vector3.Distance(transform.position, player.position) <= interactDistance)
         {
-            rb.AddForce(transform.forward * forceAmount);
-            Debug.Log("Ball Launched!");
-        }
-    }
-
-    void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerNear = true;
-            Debug.Log("Player Near Ball");
-        }
-    }
-
-    void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            playerNear = false;
+            if (Input.GetKeyDown(KeyCode.E))
+            {
+                rb.AddForce(Vector3.forward * forceAmount, ForceMode.Impulse);
+                Debug.Log("Ball Launched!");
+            }
         }
     }
 }
