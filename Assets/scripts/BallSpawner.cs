@@ -11,6 +11,16 @@ public class BallSpawner : MonoBehaviour
 
         // Tell the ball who the player is
         Ball ballScript = ball.GetComponent<Ball>();
-        ballScript.player = GameObject.Find("PlayerCapsule").transform;
+        GameObject playerObj = GameObject.Find("PlayerCapsule");
+
+if (playerObj != null)
+{
+    ballScript.player = playerObj.transform;
+    Debug.Log("Player assigned!");
+}
+else
+{
+    Debug.LogError("PlayerCapsule not found!");
+}
     }
 }
