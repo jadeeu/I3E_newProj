@@ -15,12 +15,16 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        // Don't do anything until the player has been assigned
+        if (player == null)
+            return;
+
         // Check if player is close enough
         if (Vector3.Distance(transform.position, player.position) <= interactDistance)
         {
             if (Input.GetKeyDown(KeyCode.E))
             {
-                rb.AddForce(Vector3.forward * forceAmount, ForceMode.Impulse);
+                rb.AddForce(player.forward * forceAmount, ForceMode.Impulse);
                 Debug.Log("Ball Launched!");
             }
         }
