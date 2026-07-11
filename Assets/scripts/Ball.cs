@@ -2,31 +2,43 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float forceAmount = 500f;
-    public Transform player;
+    public float forceAmount = 10f;
     public float interactDistance = 3f;
 
     private Rigidbody rb;
+    private Transform player;
+    private bool launched = false;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        // Automatically find the player
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+
+        if (playerObj != null)
+        {
+            player = playerObj.transform;
+            Debug.Log("Player assigned!");
+        }
+        else
+        {
+            Debug.LogError("Player not found!");
+        }
     }
 
     void Update()
     {
-        // Don't do anything until the player has been assigned
         if (player == null)
             return;
 
-        // Check if player is close enough
-        if (Vector3.Distance(transform.position, player.position) <= interactDistance)
+        if (!launched &&
+            Vector3.Distance(transform.position, player.position) <= interactDistance &&
+            Input.GetKeyDown(KeyCode.E))
         {
-            if (Input.GetKeyDown(KeyCode.E))
-            {
-                rb.AddForce(player.forward * forceAmount, ForceMode.Impulse);
-                Debug.Log("Ball Launched!");
-            }
+            rb.AddForce(player.forward * forceAmount, ForceMode.Impulse);
+            launched = true;
+            Debug.Log("Ball Launched!");
         }
     }
 }
