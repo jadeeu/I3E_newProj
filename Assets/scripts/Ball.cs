@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float forceAmount = 3f;
+    public float forceAmount = 200f;
     public float interactDistance = 3f;
 
     private Rigidbody rb;
@@ -11,9 +11,10 @@ public class Ball : MonoBehaviour
 
     void Start()
     {
+        // Get the Rigidbody attached to the Ball
         rb = GetComponent<Rigidbody>();
 
-        // Automatically find the player
+        // Find the Player automatically
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
 
         if (playerObj != null)
@@ -29,16 +30,22 @@ public class Ball : MonoBehaviour
 
     void Update()
     {
+        // Stop if the player wasn't found
         if (player == null)
             return;
 
-        if (!launched &&
-            Vector3.Distance(transform.position, player.position) <= interactDistance &&
-            Input.GetKeyDown(KeyCode.E))
+        // Check if the player is close enough to the Ball
+        if (Vector3.Distance(transform.position, player.position) <= interactDistance)
         {
-            rb.AddForce(player.forward * forceAmount, ForceMode.Impulse);
-            launched = true;
-            Debug.Log("Ball Launched!");
+            // Press E to kick the Ball
+            if (Input.GetKeyDown(KeyCode.E) && !launched)
+            {
+                rb.AddForce(player.forward * forceAmount);
+
+                launched = true;
+
+                Debug.Log("Ball Launched!");
+            }
         }
     }
 }
