@@ -16,7 +16,10 @@ public class GiftBox : MonoBehaviour
 
             if (pressCount >= 3)
             {
-                Instantiate(ballPrefab, transform.position, Quaternion.identity);
+                // Spawn the ball slightly above the GiftBox
+                Instantiate(ballPrefab, transform.position + Vector3.up, Quaternion.identity);
+
+                // Destroy the GiftBox
                 Destroy(gameObject);
             }
         }
@@ -24,8 +27,6 @@ public class GiftBox : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        Debug.Log("Touched: " + other.name);
-
         if (other.CompareTag("Player"))
         {
             playerNear = true;
