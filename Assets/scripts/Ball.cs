@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Ball : MonoBehaviour
 {
-    public float forceAmount = 10f;
+    public float forceAmount = 5f;
     public float interactDistance = 3f;
 
     private Rigidbody rb;
